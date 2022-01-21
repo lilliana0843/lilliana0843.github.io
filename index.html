@@ -1,6 +1,203 @@
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="zYEVybw" data-user="lilliana0843" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/lilliana0843/pen/zYEVybw">
-  Untitled</a> by lilliana0843 (<a href="https://codepen.io/lilliana0843">@lilliana0843</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+<div class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="zYEVybw" data-user="lilliana0843"  data-prefill='{"tags":[],"scripts":[],"stylesheets":[]}'>
+  <pre data-lang="html">&lt;ul class="slides">
+  &lt;input type="radio" id="control-1" name="control" checked>
+  &lt;input type="radio" id="control-2" name="control">
+  &lt;input type="radio" id="control-3" name="control">
+  &lt;input type="radio" id="control-4" name="control">
+  
+  &lt;!--  Left/Right Button  -->
+  &lt;div class="navigator slide-1">
+    &lt;label for="control-4">
+      &lt;i class="fas fa-chevron-left">&lt;/i>
+    &lt;/label>
+    &lt;label for="control-2">
+      &lt;i class="fas fa-chevron-right">&lt;/i>
+    &lt;/label>
+  &lt;/div>
+  
+  &lt;div class="navigator slide-2">
+    &lt;label for="control-1">
+      &lt;i class="fas fa-chevron-left">&lt;/i>
+    &lt;/label>
+    &lt;label for="control-3">
+      &lt;i class="fas fa-chevron-right">&lt;/i>
+    &lt;/label>
+  &lt;/div>
+  
+  &lt;div class="navigator slide-3">
+    &lt;label for="control-2">
+      &lt;i class="fas fa-chevron-left">&lt;/i>
+    &lt;/label>
+    &lt;label for="control-4">
+      &lt;i class="fas fa-chevron-right">&lt;/i>
+    &lt;/label>
+  &lt;/div>
+  
+    &lt;div class="navigator slide-4">
+    &lt;label for="control-3">
+      &lt;i class="fas fa-chevron-left">&lt;/i>
+    &lt;/label>
+    &lt;label for="control-1">
+      &lt;i class="fas fa-chevron-right">&lt;/i>
+    &lt;/label>
+  &lt;/div>
+  &lt;!--  /Left/Right Button  -->
+  
+  
+  &lt;li class="slide">&lt;img src="https://images.plurk.com/6zTYVmUN1ks5I9K70xthWW.png" alt=""/>&lt;/li>
+  &lt;li class="slide">&lt;img src="https://images.plurk.com/2uncxAeU5FRXneP6WalDx0.png" alt=""/>&lt;/li>
+  &lt;li class="slide">&lt;img src="https://images.plurk.com/mwuWMrQJFryjyxgqwpkkg.png" alt=""/>&lt;/li>
+    &lt;li class="slide">&lt;img src="https://images.plurk.com/1nUm6Xl0cZRggELosyQq22.png" alt=""/>&lt;/li>
+  
+  &lt;div class="controls-visible">
+    &lt;label for="control-1">&lt;/label>
+    &lt;label for="control-2">&lt;/label>
+    &lt;label for="control-3">&lt;/label>
+    &lt;label for="control-4">&lt;/label>
+  &lt;/div>
+&lt;/ul></pre>
+  <pre data-lang="css">body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+ul.slides {
+  position: relative;
+  width: 631px;
+  height: 548px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+li.slide {
+  margin: 0;
+  padding: 0;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica;
+  font-size: 120px;
+  color: #fff;
+  transition: .5s transform ease-in-out;
+}
+
+.slide:nth-of-type(1) {
+  background-color: #F2E205;
+}
+
+.slide:nth-of-type(2) {
+  background-color: #F25C05;
+  left: 100%;
+}
+
+.slide:nth-of-type(3) {
+  background-color: #FFFFFF;
+  left: 200%;
+}
+
+.slide:nth-of-type(4) {
+  background-color: #FFFFFF;
+  left: 300%;
+}
+
+input[type="radio"] {
+  position: relative;
+  z-index: 100;
+  display: none;
+}
+
+.controls-visible {
+  position: absolute;
+  width: 100%;
+  bottom: 12px;
+  text-align: center;
+}
+
+.controls-visible label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 3px;
+  border: 2px solid #fff;
+}
+
+.slides input[type="radio"]:nth-of-type(1):checked ~ .controls-visible label:nth-of-type(1) {
+  background-color: #333;
+}
+
+.slides input[type="radio"]:nth-of-type(2):checked ~ .controls-visible label:nth-of-type(2) {
+  background-color: #333;
+}
+
+.slides input[type="radio"]:nth-of-type(3):checked ~ .controls-visible label:nth-of-type(3) {
+  background-color: #333;
+}
+
+.slides input[type="radio"]:nth-of-type(4):checked ~ .controls-visible label:nth-of-type(4) {
+  background-color: #333;
+}
+
+.slides input[type="radio"]:nth-of-type(1):checked ~ .slide {
+  transform: translatex(0%);
+}
+
+.slides input[type="radio"]:nth-of-type(2):checked ~ .slide {
+  transform: translatex(-100%);
+}
+
+.slides input[type="radio"]:nth-of-type(3):checked ~ .slide {
+  transform: translatex(-200%);
+}
+
+.slides input[type="radio"]:nth-of-type(4):checked ~ .slide {
+  transform: translatex(-300%);
+}
+
+/* Left/Right Button Classes Below */
+
+.navigator {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 100%;
+  z-index: 100;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: none;
+}
+
+.navigator i {
+  font-size: 32px;
+  color #333333;
+}
+
+.slides input[type="radio"]:nth-of-type(1):checked ~ .navigator:nth-of-type(1) {
+  display: flex;
+}
+
+.slides input[type="radio"]:nth-of-type(2):checked ~ .navigator:nth-of-type(2) {
+  display: flex;
+}
+
+.slides input[type="radio"]:nth-of-type(3):checked ~ .navigator:nth-of-type(3) {
+  display: flex;
+}
+
+.slides input[type="radio"]:nth-of-type(4):checked ~ .navigator:nth-of-type(4) {
+  display: flex;
+}</pre></div>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
