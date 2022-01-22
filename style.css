@@ -34,10 +34,7 @@ li.slide {
   transition: .5s transform ease-in-out;
 }
 
-.list{
-	list-style-type: square;
-	padding-left: 50px;
-}
+
 
 .slide:nth-of-type(1) {
   background-color:  #FFFFFF;
