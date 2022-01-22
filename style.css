@@ -34,12 +34,12 @@ li.slide {
 }
 
 .slide:nth-of-type(1) {
-  background-color: #F2E205;
+  background-color:  #FFFFFF;
 }
 
 .slide:nth-of-type(2) {
-  background-color: #F25C05;
-  left: 100%;
+  background-color:  #FFFFFF;
+  left: 99.5%;
 }
 
 .slide:nth-of-type(3) {
@@ -121,6 +121,25 @@ input[type="radio"] {
   box-sizing: border-box;
   display: none;
 }
+.frame {  
+    height: 160px; /*can be anything*/
+    width: 160px; /*can be anything*/
+    position: relative;
+}
+
+img {  
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+
 
 .navigator i {
   font-size: 32px;
