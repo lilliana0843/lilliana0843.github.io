@@ -3,6 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  
 }
 
 ul.slides {
@@ -161,3 +162,4 @@ img {
 .slides input[type="radio"]:nth-of-type(4):checked ~ .navigator:nth-of-type(4) {
   display: flex;
 }
+
